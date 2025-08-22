@@ -1,53 +1,297 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Revista Literaria – Cultura, Costumbres, Folclor y Literatura de Guanacaste</title>
-  <meta name="description" content="Revista digital sobre la cultura, costumbres, folclor y producción literaria de la provincia de Guanacaste, Costa Rica." />
+  <meta name="description"
+    content="Revista digital sobre la cultura, costumbres, folclor y producción literaria de la provincia de Guanacaste, Costa Rica." />
   <style>
-    :root{
-      --bg:#0c0c0f; --fg:#f4f4f6; --muted:#b8bcc7; --acc:#ffd166; --acc2:#06d6a0; --card:#14141b;
-      --link:#8ab4ff; --shadow:rgba(0,0,0,.25);
+    :root {
+      --bg: #0c0c0f;
+      --fg: #f4f4f6;
+      --muted: #b8bcc7;
+      --acc: #ffd166;
+      --acc2: #06d6a0;
+      --card: #14141b;
+      --link: #8ab4ff;
+      --shadow: rgba(0, 0, 0, .25);
     }
-    *{box-sizing:border-box}
-    html,body{margin:0;padding:0;background:linear-gradient(180deg,#0c0c11 0%,#0c0c0f 100%);color:var(--fg);font:16px/1.6 system-ui,-apple-system,Segoe UI,Roboto,Inter,Ubuntu,"Helvetica Neue",Arial}
-    a{color:var(--link);text-decoration:none}
-    a:hover{text-decoration:underline}
-    header.hero{position:relative; padding:6rem 1.25rem 4rem; text-align:center; overflow:hidden}
-    .title{font-size:clamp(2rem,4vw,3.25rem); letter-spacing:.5px; margin:0 0 .5rem; font-weight:800}
-    .subtitle{color:var(--muted); margin:0 0 1.25rem; font-size:1.05rem}
-    .tag{display:inline-block; padding:.3rem .75rem; border-radius:999px; background:linear-gradient(135deg,var(--acc),var(--acc2)); color:#111; font-weight:700; letter-spacing:.25px}
-    .nav{position:sticky; top:0; backdrop-filter:saturate(140%) blur(8px); background:rgba(12,12,15,.7); border-bottom:1px solid #222; z-index:10}
-    .nav-inner{max-width:1100px; margin:0 auto; display:flex; gap:.75rem; padding:.5rem 1rem; align-items:center; overflow:auto}
-    .nav a{white-space:nowrap; padding:.4rem .75rem; border-radius:999px; background:#151521; color:#dfe3ee; border:1px solid #232336}
-    .wrap{max-width:1100px; margin:0 auto; padding:2rem 1.25rem}
-    section{margin:2.25rem 0; background:var(--card); border:1px solid #232336; border-radius:18px; box-shadow:0 10px 30px var(--shadow)}
-    section > .section-inner{padding:1.5rem}
-    h2{font-size:clamp(1.35rem,3vw,1.9rem); margin:0 0 .75rem}
-    h3{font-size:1.15rem; margin:1.25rem 0 .5rem}
-    .grid{display:grid; gap:1rem}
-    @media(min-width:880px){ .grid.cols-2{grid-template-columns:1fr 1fr} }
-    .callout{border-left:4px solid var(--acc); background:#161621; padding:1rem; border-radius:10px}
-    .badge{display:inline-block; padding:.2rem .5rem; border-radius:6px; background:#1c1c29; border:1px solid #2c2c3b; color:#cfd3df; font-size:.85rem}
-    ul{margin:.5rem 0 .75rem 1.2rem}
-    li{margin:.2rem 0}
-    .toc{display:flex; flex-wrap:wrap; gap:.5rem}
-    .toc a{background:#181828; border:1px solid #23233a}
-    .credits{display:grid; gap:.5rem; grid-template-columns:1fr;}
-    .advert{display:grid; grid-template-columns:1.1fr 1fr; gap:1rem; align-items:center; padding:1rem; border-radius:12px; border:1px dashed #2c2c3b; background:#171724}
-    .advert h3{margin:.2rem 0}
-    footer{padding:3rem 1.25rem; text-align:center; color:var(--muted)}
-    .small{font-size:.95rem}
-    .mono{font-family:ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace}
+
+    * {
+      box-sizing: border-box
+    }
+
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(180deg, #0c0c11 0%, #0c0c0f 100%);
+      color: var(--fg);
+      font: 16px/1.6 system-ui, -apple-system, Segoe UI, Roboto, Inter, Ubuntu, "Helvetica Neue", Arial
+    }
+
+    a {
+      color: var(--link);
+      text-decoration: none
+    }
+
+    a:hover {
+      text-decoration: underline
+    }
+
+    header.hero {
+      position: relative;
+      padding: 6rem 1.25rem 4rem;
+      text-align: center;
+      overflow: hidden
+    }
+
+    .title {
+      font-size: clamp(2rem, 4vw, 3.25rem);
+      letter-spacing: .5px;
+      margin: 0 0 .5rem;
+      font-weight: 800
+    }
+
+    .subtitle {
+      color: var(--muted);
+      margin: 0 0 1.25rem;
+      font-size: 1.05rem
+    }
+
+    .tag {
+      display: inline-block;
+      padding: .3rem .75rem;
+      border-radius: 999px;
+      background: linear-gradient(135deg, var(--acc), var(--acc2));
+      color: #111;
+      font-weight: 700;
+      letter-spacing: .25px
+    }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      backdrop-filter: saturate(140%) blur(8px);
+      background: rgba(12, 12, 15, .7);
+      border-bottom: 1px solid #222;
+      z-index: 10
+    }
+
+    .nav-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      gap: .75rem;
+      padding: .5rem 1rem;
+      align-items: center;
+      overflow: auto
+    }
+
+    .nav a {
+      white-space: nowrap;
+      padding: .4rem .75rem;
+      border-radius: 999px;
+      background: #151521;
+      color: #dfe3ee;
+      border: 1px solid #232336
+    }
+
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.25rem
+    }
+
+    section {
+      margin: 2.25rem 0;
+      background: var(--card);
+      border: 1px solid #232336;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px var(--shadow)
+    }
+
+    section>.section-inner {
+      padding: 1.5rem
+    }
+
+    h2 {
+      font-size: clamp(1.35rem, 3vw, 1.9rem);
+      margin: 0 0 .75rem
+    }
+
+    h3 {
+      font-size: 1.15rem;
+      margin: 1.25rem 0 .5rem
+    }
+
+    .grid {
+      display: grid;
+      gap: 1rem
+    }
+
+    @media(min-width:880px) {
+      .grid.cols-2 {
+        grid-template-columns: 1fr 1fr
+      }
+    }
+
+    .callout {
+      border-left: 4px solid var(--acc);
+      background: #161621;
+      padding: 1rem;
+      border-radius: 10px
+    }
+
+    .badge {
+      display: inline-block;
+      padding: .2rem .5rem;
+      border-radius: 6px;
+      background: #1c1c29;
+      border: 1px solid #2c2c3b;
+      color: #cfd3df;
+      font-size: .85rem
+    }
+
+    ul {
+      margin: .5rem 0 .75rem 1.2rem
+    }
+
+    li {
+      margin: .2rem 0
+    }
+
+    .toc {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .5rem
+    }
+
+    .toc a {
+      background: #181828;
+      border: 1px solid #23233a
+    }
+
+    .credits {
+      display: grid;
+      gap: .5rem;
+      grid-template-columns: 1fr;
+    }
+
+    .advert {
+      display: grid;
+      grid-template-columns: 1.1fr 1fr;
+      gap: 1rem;
+      align-items: center;
+      padding: 1rem;
+      border-radius: 12px;
+      border: 1px dashed #2c2c3b;
+      background: #171724
+    }
+
+    .advert h3 {
+      margin: .2rem 0
+    }
+
+    footer {
+      padding: 3rem 1.25rem;
+      text-align: center;
+      color: var(--muted)
+    }
+
+    .small {
+      font-size: .95rem
+    }
+
+    .mono {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace
+    }
+
+    /* Animaciones personalizadas */
+    @keyframes float {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 20px rgba(255, 209, 102, 0.3);
+      }
+
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 0 30px rgba(255, 209, 102, 0.5);
+      }
+    }
+
+    @keyframes rotate {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes bounce {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-15px);
+      }
+    }
+
+    @keyframes swing {
+
+      0%,
+      100% {
+        transform: rotate(0deg);
+      }
+
+      25% {
+        transform: rotate(10deg);
+      }
+
+      75% {
+        transform: rotate(-10deg);
+      }
+    }
+
+    @keyframes glow {
+      0% {
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+
+      100% {
+        box-shadow: 0 0 40px rgba(255, 209, 102, 0.6), 0 0 60px rgba(6, 214, 160, 0.4);
+      }
+    }
   </style>
 </head>
+
 <body>
   <header class="hero">
     <span class="tag">Revista Literaria Digital</span>
     <h1 class="title">Alma de Guanacaste</h1>
     <p class="subtitle">Cultura • Costumbres • Folclor • Producción Literaria (Géneros clásicos y libres)</p>
-    <p class="small">Curso: Literatura costarricense e identidad nacional · FH‑203 · Agosto 2025 · UTN</p>
+    <p class="small">Curso: Literatura costarricense e identidad nacional · FH-203 · Agosto 2025 · UTN</p>
   </header>
 
   <nav class="nav" aria-label="Secciones">
@@ -76,6 +320,7 @@
 
   <main class="wrap">
 
+<<<<<<< HEAD
     <section id="editorial"><div class="section-inner">
       <h2>Editorial</h2>
       <p>
@@ -468,6 +713,537 @@
           
           <h3>Desarrollo histórico</h3>
           <ul>
+=======
+    <section id="editorial">
+      <div class="section-inner">
+        <h2>Editorial</h2>
+        <p>
+          La provincia de Guanacaste representa un pilar fundamental en la construcción de la identidad costarricense.
+          Su rica herencia cultural, que abarca desde las tradiciones indígenas chorotegas hasta las manifestaciones
+          literarias contemporáneas, constituye un testimonio vivo de cómo el paisaje, las costumbres y la palabra
+          escrita se entrelazan para formar un legado único.
+        </p>
+        <p>
+          Esta revista digital explora la diversidad cultural guanacasteca y su reflejo en la producción literaria
+          provincial, analizando tanto los géneros clásicos (narrativa, poesía, teatro) como las expresiones libres
+          contemporáneas que continúan enriqueciendo el panorama literario nacional.
+        </p>
+        <div class="callout"><strong>Propósito:</strong> Vincular la riqueza cultural de Guanacaste con su producción
+          literaria para comprender su contribución a la identidad nacional costarricense.</div>
+      </div>
+    </section>
+
+    <section id="indice">
+      <div class="section-inner">
+        <h2>Índice</h2>
+        <ol>
+          <li><a href="#indigenas">Presencia y desarrollo de los pueblos indígenas</a></li>
+          <li><a href="#origen">Origen del nombre e historia de la provincia</a></li>
+          <li><a href="#geografia">Geografía y clima</a></li>
+          <li><a href="#trajes">Traje típico de la provincia</a></li>
+          <li><a href="#pobladores">Características de sus pobladores</a></li>
+          <li><a href="#comidas">Comidas típicas</a></li>
+          <li><a href="#folclor">Actividades culturales y folclóricas</a></li>
+          <li><a href="#simbolos">Símbolos naturales y peculiaridades</a></li>
+          <li><a href="#historia">Acontecimientos históricos</a></li>
+          <li><a href="#idiosincrasia">Idiosincrasia e ideología de los habitantes</a></li>
+          <li><a href="#literatura">Desarrollo de la literatura en la provincia</a></li>
+          <li><a href="#obras">Principales obras representativas</a></li>
+          <li><a href="#premios">Premios literarios recibidos</a></li>
+          <li><a href="#publicidad">Publicidad</a> · <a href="#creditos">Créditos</a> · <a
+              href="#bibliografia">Bibliografía</a> · <a href="#contraportada">Contraportada</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="indigenas">
+      <div class="section-inner">
+        <h2>1. Presencia y desarrollo de los pueblos indígenas</h2>
+        <p>
+          Los <strong>chorotegas</strong> fueron los principales habitantes prehispánicos de la región guanacasteca.
+          Este pueblo, de origen nahua-mangue, se estableció en la península de Nicoya y desarrolló una sociedad
+          compleja basada en la agricultura del maíz, frijol y cacao.
+        </p>
+        <div class="grid cols-2">
+          <div>
+            <h3>Legado cultural chorotega</h3>
+            <ul>
+              <li><strong>Cerámica policroma:</strong> Técnicas artísticas que perduran en la actualidad</li>
+              <li><strong>Agricultura:</strong> Cultivo del maíz como base alimentaria</li>
+              <li><strong>Organización social:</strong> Estructura jerárquica con caciques</li>
+              <li><strong>Toponimia:</strong> Nombres de lugares como Nicoya, Nandayure</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Influencia en la cultura actual</h3>
+            <ul>
+              <li>Técnicas de alfarería en Santa Bárbara de Heredia</li>
+              <li>Uso del maíz en gastronomía tradicional</li>
+              <li>Creencias y leyendas incorporadas al folclor</li>
+              <li>Tradiciones agrícolas y de comunidad</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="origen">
+      <div class="section-inner">
+        <h2>2. Origen del nombre e historia de la provincia</h2>
+        <p>
+          El nombre "Guanacaste" proviene del árbol <em>Enterolobium cyclocarpum</em>, conocido localmente como
+          guanacaste o árbol de las orejas, debido a la forma característica de sus frutos. Este árbol, declarado árbol
+          nacional de Costa Rica, simboliza la sombra protectora y el punto de encuentro comunitario.
+        </p>
+        <div class="callout">
+          <h3>Anexión del Partido de Nicoya (25 de julio de 1824)</h3>
+          <p>Evento histórico fundamental donde los pueblos del Partido de Nicoya decidieron anexarse a Costa Rica en
+            lugar de permanecer bajo jurisdicción nicaragüense. Esta fecha se celebra como el Día de la Anexión de
+            Guanacaste.</p>
+        </div>
+        <h3>Desarrollo histórico posterior</h3>
+        <ul>
+          <li>Consolidación como provincia en 1848</li>
+          <li>Desarrollo de la ganadería extensiva (siglos XIX-XX)</li>
+          <li>Creación del sistema de haciendas sabaneras</li>
+          <li>Modernización y desarrollo turístico (siglo XXI)</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="geografia">
+      <div class="section-inner">
+        <h2>3. Geografía y clima</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Ubicación geográfica</h3>
+            <ul>
+              <li>Región Pacífico Norte de Costa Rica</li>
+              <li>Limita con Nicaragua al norte</li>
+              <li>Extenso litoral en el Océano Pacífico</li>
+              <li>Península de Nicoya como zona destacada</li>
+            </ul>
+            <h3>Relieve característico</h3>
+            <ul>
+              <li>Llanuras y sabanas extensas</li>
+              <li>Cordilleras de Guanacaste y Tilarán</li>
+              <li>Volcanes: Rincón de la Vieja, Miravalles</li>
+              <li>Cuenca del río Tempisque</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Clima tropical seco</h3>
+            <ul>
+              <li><span class="badge">Estación seca</span> Diciembre a abril</li>
+              <li><span class="badge">Estación lluviosa</span> Mayo a noviembre</li>
+              <li>Temperaturas promedio: 25°C - 35°C</li>
+              <li>Precipitación anual: 1,200 - 2,000 mm</li>
+            </ul>
+            <h3>Biodiversidad</h3>
+            <ul>
+              <li>Bosque tropical seco (ecosistema único)</li>
+              <li>Manglares y humedales costeros</li>
+              <li>Parques nacionales: Santa Rosa, Palo Verde</li>
+              <li>Fauna: jaguar, puma, venado cola blanca</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="trajes">
+      <div class="section-inner">
+        <h2>4. Traje típico de la provincia</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Vestimenta femenina</h3>
+            <ul>
+              <li><strong>Falda amplia:</strong> En colores vivos (rojo, azul, amarillo)</li>
+              <li><strong>Blusa:</strong> Bordada con motivos florales, manga corta</li>
+              <li><strong>Accesorios:</strong> Flores naturales en el cabello, aretes</li>
+              <li><strong>Calzado:</strong> Zapatos de tacón bajo en cuero</li>
+              <li><strong>Peinado:</strong> Trenzas o moño adornado con flores</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Vestimenta masculina</h3>
+            <ul>
+              <li><strong>Pantalón:</strong> De manta o algodón blanco</li>
+              <li><strong>Camisa:</strong> Blanca de manga larga, abotonada</li>
+              <li><strong>Accesorios:</strong> Faja roja, pañuelo al cuello</li>
+              <li><strong>Sombrero:</strong> De palma o fieltro, ala ancha</li>
+              <li><strong>Calzado:</strong> Botines de cuero o zapatos cerrados</li>
+            </ul>
+          </div>
+        </div>
+        <div class="callout">
+          <strong>Importancia cultural:</strong> El traje típico guanacasteco se utiliza en festividades patrias,
+          presentaciones folclóricas y celebraciones tradicionales, representando la identidad provincial en eventos
+          nacionales.
+        </div>
+      </div>
+    </section>
+
+    <section id="pobladores">
+      <div class="section-inner">
+        <h2>5. Características de sus pobladores</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Población campesina</h3>
+            <ul>
+              <li><strong>Sabaneros:</strong> Trabajadores de ganado, expertos jinetes</li>
+              <li><strong>Agricultores:</strong> Cultivo de arroz, caña, maíz</li>
+              <li><strong>Artesanos:</strong> Talabartería, cerámica, tejidos</li>
+              <li><strong>Tradición oral:</strong> Conservadores de leyendas y cuentos</li>
+            </ul>
+            <h3>Valores tradicionales</h3>
+            <ul>
+              <li>Hospitalidad y solidaridad comunitaria</li>
+              <li>Respeto a los mayores y tradiciones familiares</li>
+              <li>Apego a la tierra y vida rural</li>
+              <li>Religiosidad católica popular</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Población urbana</h3>
+            <ul>
+              <li><strong>Sector servicios:</strong> Turismo, comercio, administración</li>
+              <li><strong>Profesionales:</strong> Educación, salud, tecnología</li>
+              <li><strong>Empresarios:</strong> Hotelería, gastronomía, transporte</li>
+              <li><strong>Jóvenes:</strong> Fusión de tradición y modernidad</li>
+            </ul>
+            <h3>Características del habla</h3>
+            <ul>
+              <li>Uso de regionalismos específicos</li>
+              <li>Entonación característica cantada</li>
+              <li>Expresiones propias del folclor oral</li>
+              <li>Influencia de lenguas indígenas en toponimia</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="comidas">
+      <div class="section-inner">
+        <h2>6. Comidas típicas</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Platos principales</h3>
+            <ul>
+              <li><strong>Gallo pinto guanacasteco:</strong> Con cebolla, culantro y natilla</li>
+              <li><strong>Arroz de maíz:</strong> Guiso tradicional con verduras</li>
+              <li><strong>Olla de carne:</strong> Con yuca, ñame, plátano verde</li>
+              <li><strong>Tamal asado:</strong> Envuelto en hoja de plátano</li>
+              <li><strong>Sopa de pozol:</strong> A base de maíz molido</li>
+            </ul>
+            <h3>Dulces y postres</h3>
+            <ul>
+              <li><strong>Rosquillas:</strong> De maíz con queso</li>
+              <li><strong>Cajetas:</strong> De leche, coco y panela</li>
+              <li><strong>Melcochas:</strong> Dulce de panela estiraria</li>
+              <li><strong>Conservas:</strong> De mango, jocote, guayaba</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Bebidas tradicionales</h3>
+            <ul>
+              <li><strong>Pinolillo:</strong> Maíz tostado con cacao</li>
+              <li><strong>Pozol morado:</strong> Maíz morado fermentado</li>
+              <li><strong>Horchata:</strong> Arroz con leche y canela</li>
+              <li><strong>Chicha:</strong> De maíz fermentado</li>
+              <li><strong>Agua de sapo:</strong> Panela con limón y jengibre</li>
+            </ul>
+            <h3>Preparaciones especiales</h3>
+            <ul>
+              <li>Cocina en fogón de leña</li>
+              <li>Uso de comales de barro</li>
+              <li>Tortillas palmeadas a mano</li>
+              <li>Conservación tradicional de alimentos</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="folclor">
+      <div class="section-inner">
+        <h2>7. Actividades culturales y folclóricas</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Música tradicional</h3>
+            <ul>
+              <li><strong>Punto Guanacasteco:</strong> Baile nacional de Costa Rica</li>
+              <li><strong>Marimba:</strong> Instrumento emblemático regional</li>
+              <li><strong>Parranderas:</strong> Canciones festivas y populares</li>
+              <li><strong>Caballito Nicoyano:</strong> Danza de tradición colonial</li>
+            </ul>
+            <h3>Expresiones orales</h3>
+            <ul>
+              <li><strong>Bombas:</strong> Cuartetas improvisadas con humor</li>
+              <li><strong>Retahílas:</strong> Trabalenguas y juegos de palabras</li>
+              <li><strong>Adivinanzas:</strong> Acertijos de tradición popular</li>
+              <li><strong>Décimas:</strong> Poesía popular cantada</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Festividades y tradiciones</h3>
+            <ul>
+              <li><strong>25 de julio:</strong> Día de la Anexión de Guanacaste</li>
+              <li><strong>Montaderas de toros:</strong> Espectáculo tradicional</li>
+              <li><strong>Santos patronales:</strong> Celebraciones religiosas-populares</li>
+              <li><strong>Mascaradas:</strong> Personajes folclóricos en desfiles</li>
+              <li><strong>Topes:</strong> Desfiles de caballos y carretas</li>
+            </ul>
+            <h3>Artesanías</h3>
+            <ul>
+              <li>Cerámica chorotega (Santa Bárbara)</li>
+              <li>Trabajos en cuero (talabartería)</li>
+              <li>Tejidos en fibras naturales</li>
+              <li>Instrumentos musicales (marimbas)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="simbolos">
+      <div class="section-inner">
+        <h2>8. Símbolos naturales y peculiaridades</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Símbolos naturales</h3>
+            <ul>
+              <li><strong>Árbol de Guanacaste:</strong> Árbol nacional, símbolo de sombra y encuentro</li>
+              <li><strong>Yigüirro:</strong> Ave nacional, presente en toda la región</li>
+              <li><strong>Venado cola blanca:</strong> Fauna emblemática de las sabanas</li>
+              <li><strong>Mariposa azul:</strong> Insecto nacional, habita en bosques secos</li>
+            </ul>
+            <h3>Ecosistemas únicos</h3>
+            <ul>
+              <li>Bosque tropical seco (único en Centroamérica)</li>
+              <li>Manglares del Golfo de Nicoya</li>
+              <li>Sabanas naturales extensas</li>
+              <li>Esteros y humedales costeros</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Peculiaridades culturales</h3>
+            <ul>
+              <li><strong>Habla cantada:</strong> Entonación característica regional</li>
+              <li><strong>Gastronomía del maíz:</strong> Base alimentaria tradicional</li>
+              <li><strong>Música de marimba:</strong> Presente en toda festividad</li>
+              <li><strong>Tradición ecuestre:</strong> Cultura del caballo y sabanero</li>
+            </ul>
+            <h3>Paisajes característicos</h3>
+            <ul>
+              <li>Llanuras doradas en época seca</li>
+              <li>Atardeceres espectaculares en la sabana</li>
+              <li>Costas de arenas blancas y aguas azules</li>
+              <li>Volcanes activos como telón de fondo</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="historia">
+      <div class="section-inner">
+        <h2>9. Acontecimientos históricos desarrollados en la provincia</h2>
+        <div class="callout">
+          <h3>Anexión del Partido de Nicoya (25 de julio de 1824)</h3>
+          <p>Evento fundacional de la identidad guanacasteca. Los pueblos de Nicoya, Santa Cruz y Guanacaste decidieron
+            por votación popular anexarse a Costa Rica, dejando atrás su pertenencia a Nicaragua.</p>
+        </div>
+
+        <h3>Otros acontecimientos relevantes</h3>
+        <ul>
+          <li><strong>Período colonial:</strong> Establecimiento de haciendas ganaderas y agricultura de subsistencia
+          </li>
+          <li><strong>Siglo XIX:</strong> Consolidación del sistema de haciendas y desarrollo de la ganadería extensiva
+          </li>
+          <li><strong>Guerra contra los filibusteros (1856-1857):</strong> Participación de guanacastecos en la defensa
+            nacional</li>
+          <li><strong>Siglo XX:</strong> Modernización de la ganadería y llegada del ferrocarril</li>
+          <li><strong>Época contemporánea:</strong> Desarrollo del turismo y conservación ambiental</li>
+          <li><strong>Creación de parques nacionales:</strong> Santa Rosa (1971), Palo Verde, Rincón de la Vieja</li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="idiosincrasia">
+      <div class="section-inner">
+        <h2>10. Idiosincrasia e ideología de los habitantes</h2>
+        <div class="grid cols-2">
+          <div>
+            <h3>Valores fundamentales</h3>
+            <ul>
+              <li><strong>Hospitalidad:</strong> Recibimiento cálido al visitante</li>
+              <li><strong>Solidaridad:</strong> Apoyo comunitario en dificultades</li>
+              <li><strong>Trabajo honrado:</strong> Valoración del esfuerzo y la dedicación</li>
+              <li><strong>Respeto generacional:</strong> Veneración a los mayores y sus conocimientos</li>
+              <li><strong>Orgullo regional:</strong> Fuerte sentimiento de pertenencia territorial</li>
+            </ul>
+            <h3>Características mentales</h3>
+            <ul>
+              <li>Conservadurismo cultural combinado con apertura al cambio</li>
+              <li>Humor festivo y capacidad de celebración</li>
+              <li>Pragmatismo en la resolución de problemas</li>
+              <li>Apego emocional al paisaje y la naturaleza</li>
+            </ul>
+          </div>
+          <div>
+            <h3>Expresiones ideológicas</h3>
+            <ul>
+              <li><strong>Religiosidad popular:</strong> Catolicismo mezclado con tradiciones locales</li>
+              <li><strong>Democracia participativa:</strong> Tradición de asambleas y toma de decisiones colectivas</li>
+              <li><strong>Conservación ambiental:</strong> Conciencia creciente sobre protección natural</li>
+              <li><strong>Identidad nacional:</strong> Contribución activa a la costarricensidad</li>
+            </ul>
+            <h3>Manifestaciones culturales</h3>
+            <ul>
+              <li>Festividades como expresión de identidad colectiva</li>
+              <li>Transmisión oral de tradiciones y valores</li>
+              <li>Integración de modernidad sin perder raíces</li>
+              <li>Palabra cantada como vehículo de memoria histórica</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="literatura">
+      <div class="section-inner">
+        <h2>11. Desarrollo de la literatura en Guanacaste</h2>
+
+        <h3>Historia de los forjadores literarios</h3>
+        <p>La literatura guanacasteca tiene sus raíces en la tradición oral indígena y colonial, desarrollándose
+          formalmente desde principios del siglo XX con autores que rescataron y recrearon el folclor regional.</p>
+
+        <!-- Sección Animada de Autores (CON FOTOS REALES) -->
+        <div
+          style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); border-radius: 15px; padding: 2rem; margin: 2rem 0; border: 2px solid #ffd166; position: relative; overflow: hidden;">
+          <div
+            style="position: absolute; top: -50px; right: -50px; width: 100px; height: 100px; background: radial-gradient(circle, rgba(255,209,102,0.1) 0%, transparent 70%); border-radius: 50%; animation: float 6s ease-in-out infinite;">
+          </div>
+          <div
+            style="position: absolute; bottom: -30px; left: -30px; width: 60px; height: 60px; background: radial-gradient(circle, rgba(6,214,160,0.15) 0%, transparent 70%); border-radius: 50%; animation: float 4s ease-in-out infinite reverse;">
+          </div>
+
+          <h3
+            style="color: #ffd166; text-align: center; margin-bottom: 1.5rem; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+            🖋️ Galería de Autores Guanacastecos 📚</h3>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+
+            <!-- 1) María Leal de Noguera -->
+            <div
+              style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,209,102,0.3); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px); transition: all 0.3s ease; position: relative;"
+              onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(255,209,102,0.2)'"
+              onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
+              <div style="text-align: center; margin-bottom: 1rem;">
+                <!-- Retrato/escultura representativa de María Leal (si conseguís un retrato, solo cambiá el src) -->
+                <img src="./img/maria.jpg" alt="María Leal de Noguera"
+                  style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #ffd166; animation:pulse 2s infinite;">
+
+              </div>
+              <h4 style="color: #ffd166; text-align: center; margin-bottom: 0.5rem;">María Leal de Noguera</h4>
+              <p style="color: #b8bcc7; text-align: center; font-size: 0.9rem; margin-bottom: 0.5rem;">(1896–1989)</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Obra principal:</strong>
+                "Cuentos viejos"</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Aporte:</strong> Rescate
+                de tradición oral guanacasteca</p>
+            </div>
+
+            <!-- 2) José León Sánchez -->
+            <div
+              style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,209,102,0.3); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px); transition: all 0.3s ease;"
+              onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(255,209,102,0.2)'"
+              onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
+              <div style="text-align: center; margin-bottom: 1rem;">
+                <!-- Foto en Wikimedia Commons (estable con Special:FilePath) -->
+                <img
+                  src="https://commons.wikimedia.org/wiki/Special:FilePath/Jos%C3%A9%20Le%C3%B3n%20S%C3%A1nchez%20holding%20the%20Codex%20Borbonicus%2C%202014-08-07%20Dccespedes.jpg"
+                  alt="José León Sánchez"
+                  style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #ffd166; animation:pulse 2s infinite 0.5s;">
+              </div>
+              <h4 style="color: #ffd166; text-align: center; margin-bottom: 0.5rem;">José León Sánchez</h4>
+              <p style="color: #b8bcc7; text-align: center; font-size: 0.9rem; margin-bottom: 0.5rem;">(1929–2022)</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Conexión:</strong>
+                Narrativa de realidad social</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Obras:</strong> "La isla
+                de los hombres solos", "La Cattleya negra"</p>
+            </div>
+
+            <!-- 3) Escritores regionales (imagen alusiva real) -->
+            <div
+              style="background: rgba(255,255,255,0.05); border: 1px solid rgba(255,209,102,0.3); border-radius: 12px; padding: 1.5rem; backdrop-filter: blur(10px); transition: all 0.3s ease;"
+              onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 25px rgba(255,209,102,0.2)'"
+              onmouseout="this.style.transform='translateY(0px)'; this.style.boxShadow='none'">
+              <div style="text-align: center; margin-bottom: 1rem;">
+                <!-- Foto real relacionada a la literatura/música guanacasteca -->
+                <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Marimbero.%20Costa%20Rica.jpg"
+                  alt="Marimbero de Costa Rica"
+                  style="width:80px; height:80px; border-radius:50%; object-fit:cover; border:2px solid #ffd166; animation:pulse 2s infinite 1s;">
+              </div>
+              <h4 style="color: #ffd166; text-align: center; margin-bottom: 0.5rem;">Escritores Regionales</h4>
+              <p style="color: #b8bcc7; text-align: center; font-size: 0.9rem; margin-bottom: 0.5rem;">Voces
+                contemporáneas</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Enfoque:</strong>
+                Literatura regional actual</p>
+              <p style="font-size: 0.85rem; line-height: 1.4;"><strong style="color: #06d6a0;">Temática:</strong>
+                Identidad y modernidad</p>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Elemento Central Animado -->
+      <div style="text-align: center; margin-top: 2rem;">
+        <div
+          style="display: inline-block; padding: 1rem 2rem; background: rgba(255,255,255,0.15); border: 2px solid rgba(255,255,255,0.3); border-radius: 25px; backdrop-filter: blur(20px); animation: glow 3s ease-in-out infinite alternate;">
+          <span style="color: white; font-weight: bold; text-shadow: 0 2px 4px rgba(0,0,0,0.5);">🌟 DE LA TRADICIÓN A LA
+            INNOVACIÓN 🌟</span>
+        </div>
+      </div>
+      </div>
+
+      <div class="grid cols-2">
+        <div>
+          <h3>Géneros desarrollados</h3>
+          <ul>
+            <li><strong>Narrativa tradicional:</strong> Recopilación de cuentos populares y leyendas</li>
+            <li><strong>Costumbrismo:</strong> Relatos de la vida rural y sabanera</li>
+            <li><strong>Poesía folclórica:</strong> Décimas, bombas y coplas tradicionales</li>
+            <li><strong>Teatro popular:</strong> Representaciones de fiestas patronales</li>
+            <li><strong>Crónica histórica:</strong> Testimonios de la vida regional</li>
+          </ul>
+
+          <h3>Temas desarrollados</h3>
+          <ul>
+            <li>Vida campesina y cultura sabanera</li>
+            <li>Tradiciones y costumbres regionales</li>
+            <li>Paisaje guanacasteco y naturaleza</li>
+            <li>Memoria histórica y identidad regional</li>
+            <li>Críticas sociales sobre modernización</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Autores representativos</h3>
+          <ul>
+            <li><strong>María Leal de Noguera (1896-1972):</strong> <em>"Cuentos viejos"</em> - Recopilación de
+              tradición oral guanacasteca</li>
+            <li><strong>José León Sánchez:</strong> Aunque de origen humilde, parte de su obra refleja la realidad rural
+            </li>
+            <li><strong>Julieta Pinto:</strong> Narrativa que incluye elementos de la cultura guanacasteca</li>
+            <li><strong>Escritores locales:</strong> Antologistas y cronistas regionales contemporáneos</li>
+          </ul>
+
+          <h3>Desarrollo histórico</h3>
+          <ul>
+>>>>>>> 1cf0fd9 (Agregué imagen local de María Leal y actualicé HTML)
             <li><strong>Siglo XIX:</strong> Tradición oral y primeros registros escritos</li>
             <li><strong>Primera mitad S. XX:</strong> Recopilación sistemática del folclor</li>
             <li><strong>Segunda mitad S. XX:</strong> Desarrollo de literatura regional</li>
@@ -475,8 +1251,10 @@
           </ul>
         </div>
       </div>
-    </div></section>
+      </div>
+    </section>
 
+<<<<<<< HEAD
     <section id="obras"><div class="section-inner">
       <h2>12. Principales obras representativas de la provincia</h2>
       <p class="mono small">Análisis de sinopsis, importancia literaria y presencia de rasgos identitarios guanacastecos.</p>
@@ -569,10 +1347,95 @@
         </div>
         <div>
           <p class="small"><strong>Patrocinado por:</strong><br>Ministerio de Cultura y Juventud<br>Municipalidades de Guanacaste<br>Universidad Técnica Nacional<br>Editorial Costa Rica</p>
+=======
+    <section id="obras">
+      <div class="section-inner">
+        <h2>12. Principales obras representativas de la provincia</h2>
+        <p class="mono small">Análisis de sinopsis, importancia literaria y presencia de rasgos identitarios
+          guanacastecos.</p>
+
+        <h3>A. Dos novelas representativas</h3>
+        <div class="callout">
+          <h4>1. "El Moto" (Joaquín Gutiérrez)</h4>
+          <p><strong>Sinopsis:</strong> Aunque el autor no es guanacasteco, esta novela retrata aspectos de la vida
+            rural costarricense que incluyen elementos de la cultura sabanera y campesina que resuenan con la identidad
+            guanacasteca.</p>
+          <p><strong>Importancia literaria:</strong> Representa la transición entre el mundo rural tradicional y la
+            modernidad, tema central en la literatura que refleja la vida guanacasteca.</p>
+        </div>
+
+        <div class="callout">
+          <h4>2. Obras de temática regional</h4>
+          <p><strong>Nota:</strong> La literatura guanacasteca se caracteriza más por la narrativa corta y la
+            recopilación folclórica que por la novela extensa. Las obras representativas incluyen colecciones de relatos
+            que retratan la vida regional.</p>
+        </div>
+
+        <h3>B. Dos libros de leyendas</h3>
+        <div class="callout">
+          <h4>1. "Cuentos viejos" (María Leal de Noguera)</h4>
+          <p><strong>Sinopsis:</strong> Recopilación de cuentos tradicionales de la región guanacasteca, narrados en el
+            lenguaje popular de la sabana. Incluye relatos que han viajado de generación en generación, manteniendo
+            temas de origen remoto pero con matices del habla local.</p>
+          <p><strong>Importancia literaria:</strong> Primera gran recopilación sistemática de la tradición oral
+            guanacasteca. Preserva el lenguaje vernacular y las formas narrativas populares.</p>
+          <p><strong>Rasgos identitarios:</strong> Uso del habla popular guanacasteca, referencias a costumbres locales,
+            integración de elementos de la vida rural y sabanera.</p>
+        </div>
+
+        <div class="callout">
+          <h4>2. Tradiciones orales recopiladas</h4>
+          <p><strong>Sinopsis:</strong> Diversas recopilaciones de leyendas locales, incluyendo historias de la cultura
+            chorotega, relatos de haciendas y leyendas de la vida cotidiana regional.</p>
+          <p><strong>Importancia literaria:</strong> Mantienen viva la memoria colectiva y sirven como fuente para
+            escritores contemporáneos.</p>
+        </div>
+
+        <h3>C. Dos libros de poesía</h3>
+        <div class="callout">
+          <h4>1. Antologías de poesía guanacasteca</h4>
+          <p><strong>Sinopsis:</strong> Compilaciones de poemas que exaltan el paisaje, las tradiciones y la identidad
+            regional, incluyendo tanto poesía tradicional como contemporánea.</p>
+          <p><strong>Importancia literaria:</strong> Documentan la evolución de la sensibilidad poética regional y su
+            contribución a la literatura nacional.</p>
+        </div>
+
+        <div class="callout">
+          <h4>2. Décimas y coplas tradicionales</h4>
+          <p><strong>Sinopsis:</strong> Recopilaciones de poesía popular cantada, incluyendo bombas, décimas y coplas
+            que forman parte del folclor musical de la región.</p>
+          <p><strong>Importancia literaria:</strong> Representan la fusión entre literatura y música, característica
+            distintiva de la cultura guanacasteca.</p>
+        </div>
+
+        <h3>Desarrollo y presencia de rasgos identitarios</h3>
+        <div class="grid cols-2">
+          <div>
+            <h4>Rasgos de identidad guanacasteca</h4>
+            <ul>
+              <li>Lenguaje popular con regionalismos específicos</li>
+              <li>Referencias al paisaje seco y sabanero</li>
+              <li>Cultura ecuestre y ganadera</li>
+              <li>Tradiciones musicales (marimba, punto guanacasteco)</li>
+              <li>Humor y picardía en el habla popular</li>
+            </ul>
+          </div>
+          <div>
+            <h4>Presencia de costumbres y tradiciones</h4>
+            <ul>
+              <li>Festividades patronales y religiosas</li>
+              <li>Celebraciones del 25 de julio (Anexión)</li>
+              <li>Tradiciones gastronómicas regionales</li>
+              <li>Oficios tradicionales (talabartería, agricultura)</li>
+              <li>Valores comunitarios y solidaridad</li>
+            </ul>
+          </div>
+>>>>>>> 1cf0fd9 (Agregué imagen local de María Leal y actualicé HTML)
         </div>
       </div>
-    </div></section>
+    </section>
 
+<<<<<<< HEAD
     <section id="creditos"><div class="section-inner">
       <h2>Créditos / Directorio</h2>
       <div class="credits">
@@ -593,9 +1456,29 @@
         <div><strong>Facilitadora:</strong> MSc. Rosaicel Moreira O.</div>
         <div><strong>Institución:</strong> Universidad Técnica Nacional • Sede Corobicí, Cañas</div>
         <div><strong>Fecha:</strong> 21 de agosto del 2025</div>
+=======
+    <section id="premios">
+      <div class="section-inner">
+        <h2>13. Premios literarios recibidos por escritores de la provincia</h2>
+        <ul>
+          <li><strong>María Leal de Noguera:</strong> Reconocimiento nacional por su labor de rescate de la tradición
+            oral costarricense</li>
+          <li><strong>Premios regionales:</strong> Diversos reconocimientos a autores locales por su contribución a la
+            preservación cultural</li>
+          <li><strong>Menciones honoríficas:</strong> En concursos nacionales de literatura por obras que retratan la
+            identidad guanacasteca</li>
+          <li><strong>Reconocimientos académicos:</strong> Por investigaciones en folclor y tradiciones regionales</li>
+        </ul>
+        <div class="callout">
+          <strong>Nota:</strong> La literatura guanacasteca ha sido más reconocida por su valor cultural y antropológico
+          que por premios literarios formales, siendo su mayor logro la preservación de la identidad regional en la
+          literatura nacional.
+        </div>
+>>>>>>> 1cf0fd9 (Agregué imagen local de María Leal y actualicé HTML)
       </div>
-    </div></section>
+    </section>
 
+<<<<<<< HEAD
     <section id="bibliografia"><div class="section-inner">
       <h2>Bibliografía (Formato APA 7.ª edición)</h2>
       <ul>
@@ -609,3 +1492,75 @@
         <li>Sandoval de Fonseca, V. (1978). <em>Resumen de literatura costarricense</em>. Editorial Costa Rica.</li>
       </ul>
       <p class="small"><strong>Nota:</strong> Esta bibliografía incluye fuentes verificadas y debe complementarse con investigación adicional según los recursos disponibles para cada equipo de trabajo.</p>
+=======
+    <section id="publicidad">
+      <div class="section-inner">
+        <h2>Publicidad</h2>
+        <div class="advert">
+          <div>
+            <h3>🎭 Festival Cultural Guanacasteco 2025</h3>
+            <p class="small"><strong>25-27 de Julio</strong> • Liberia, Santa Cruz, Nicoya</p>
+            <p class="small">✨ Presentaciones de marimba y punto guanacasteco<br>📚 Recitales de poesía regional<br>🍽️
+              Feria gastronómica tradicional<br>🎨 Exposición de artesanías chorotegas</p>
+            <p class="mono small">#CulturaViva #GuanacasteEnLetras #IdentidadNacional</p>
+          </div>
+          <div>
+            <p class="small"><strong>Patrocinado por:</strong><br>Ministerio de Cultura y Juventud<br>Municipalidades de
+              Guanacaste<br>Universidad Técnica Nacional<br>Editorial Costa Rica</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="creditos">
+      <div class="section-inner">
+        <h2>Créditos / Directorio</h2>
+        <div class="credits">
+          <div><strong>Autor del proyecto:</strong> Sebastian Daniel Martinez Guzman</div>
+          <div><strong>Identificación:</strong> [Agregar su número de identificación]</div>
+          <div><strong>Sede:</strong> Corobicí, Cañas</div>
+          <br>
+          <div><strong>Funciones realizadas:</strong></div>
+          <ul class="small">
+            <li>Investigación cultural y folclórica de Guanacaste</li>
+            <li>Análisis de la literatura regional</li>
+            <li>Redacción y desarrollo de contenidos</li>
+            <li>Diseño y maquetación digital de la revista</li>
+            <li>Compilación bibliográfica y referencias APA</li>
+          </ul>
+          <br>
+          <div><strong>Curso:</strong> FH-203 • Literatura costarricense e identidad nacional</div>
+          <div><strong>Facilitadora:</strong> MSc. Rosaicel Moreira O.</div>
+          <div><strong>Institución:</strong> Universidad Técnica Nacional • Sede Corobicí, Cañas</div>
+          <div><strong>Fecha:</strong> 21 de agosto del 2025</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="bibliografia">
+      <div class="section-inner">
+        <h2>Bibliografía (Formato APA 7.ª edición)</h2>
+        <ul>
+          <li>Editorial Costa Rica. (2017). <em>Cuentos viejos</em> [Descripción del libro].
+            https://www.editorialcostarica.com/catalogo/1871</li>
+          <li>Editorial Costa Rica. (s.f.). <em>María Leal de Noguera</em> [Biografía del autor].
+            https://www.editorialcostarica.com/escritor/1020</li>
+          <li>Gamboa, E. (2017). Prólogo. En M. Leal de Noguera, <em>Cuentos viejos</em>. Editorial Costa Rica.</li>
+          <li>Leal de Noguera, M. (2017). <em>Cuentos viejos</em>. Editorial Costa Rica. (Obra original publicada en
+            1968)</li>
+          <li>Ministerio de Cultura y Juventud. (2024). <em>Patrimonio cultural inmaterial de Costa Rica</em>.
+            https://www.mcj.go.cr/</li>
+          <li>Quesada Pacheco, M. Á. (2007). <em>Nuevo diccionario de costarriqueñismos</em> (4.ª ed.). Editorial
+            Tecnológica de Costa Rica.</li>
+          <li>Rodríguez Vega, E. (1980). <em>Biografía de Costa Rica</em>. Editorial Costa Rica.</li>
+          <li>Sandoval de Fonseca, V. (1978). <em>Resumen de literatura costarricense</em>. Editorial Costa Rica.</li>
+        </ul>
+        <p class="small"><strong>Nota:</strong> Esta bibliografía incluye fuentes verificadas y debe complementarse con
+          investigación adicional según los recursos disponibles para cada equipo de trabajo.</p>
+      </div>
+    </section>
+
+  </main>
+</body>
+
+</html>
